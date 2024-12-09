@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Example of the Authorization Code with PKCE flow with Spotify</title>
+    <title>yur</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
+    <script src="spotify-web-api.js"></script>
+    <script src="sketch.js"></script>
+    <script src="fest.js"></script>
+    <script src="quiz.js"></script>
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <div id="main"></div>
-    <div id="oauth"></div>
-
-    <div id="login">
-      <h1>Welcome to the OAuth2 PKCE Example</h1>
-      <button id="login-button" data-bind-onclick="loginWithSpotifyClick();">
-        Log in with Spotify
-      </button>
+    <div class="modal">
+      <div id="wrapper">
+        <a
+          href="https://accounts.spotify.com/authorize?client_id=0a742c05fb3443b39e64fc8ef603812c&response_type=token&scope=user-top-read&redirect_uri=http://localhost%3A3000"
+          id="authenticate"
+          >Authorize Spotify</a
+        >
+        <div id="close">X</div>
+      </div>
     </div>
-
-    <script src="sketch.js" type="module"></script>
+    <section id="mySketch"></section>
+    <script type="text/javascript">
+      var modal = document.querySelector('.modal').classList;
+      var closeBtn = document.getElementById('close');
+      var authBtn = document.querySelector('A');
+      closeBtn.addEventListener('click', () => {
+        modal.add('closed');
+      });
+    </script>
   </body>
 </html>

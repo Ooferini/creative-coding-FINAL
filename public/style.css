@@ -1,39 +1,57 @@
-body {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Comic Sans MS', sans-serif;
+}
+
+a {
+  text-align: center;
+  display: inline-block;
   margin: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 1rem;
+  background-color: green;
+  color: white;
+  border-radius: 0.5rem;
 }
 
-tr:nth-child(even) {
-  background-color: #eee;
+.modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  position: fixed;
+  z-index: 1;
+  transition: all 1s ease;
+  top: 0;
 }
 
-td:first-child {
-  font-weight: bold;
+#wrapper {
+  margin: 25% auto;
+  width: 25%;
+  display: flex;
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 1rem;
 }
 
-td {
-  white-space: nowrap;
-  padding: 10px;
-  margin-right: 1rem;
+#close {
+  display: inline-block;
+  cursor: pointer;
+  background-color: gray;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
 }
 
-button {
-  margin: 1rem 1rem 0 0;
-  border: 0;
-  border-radius: 20px;
-  padding: 10px 3rem;
-  font-size: 0.8rem;
-  font-family: Arial, Helvetica, sans-serif;
-  text-transform: uppercase;
-  font-weight: bold;
-  background-color: #1ed760;
-  color: black;
+.closed {
+  top: -100dvh;
 }
 
-button:hover {
-  background-color: #1fdf64;
-}
-
-#logged-in {
-  display: none;
+input {
+  padding: 1rem;
+  text-size: 2rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: #2b9720;
+  color: #f5f5f5;
 }
