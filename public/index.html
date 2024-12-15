@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>yur</title>
+    <title>jo's spotify things</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.js"></script>
     <script src="spotify-web-api.js"></script>
     <script src="sketch.js"></script>
@@ -15,7 +15,7 @@
     <div class="modal">
       <div id="wrapper">
         <a
-          href="https://accounts.spotify.com/authorize?client_id=0a742c05fb3443b39e64fc8ef603812c&response_type=token&scope=user-top-read&redirect_uri=http://localhost%3A3000"
+          href="https://accounts.spotify.com/authorize?client_id=0a742c05fb3443b39e64fc8ef603812c&response_type=token&scope=user-top-read&redirect_uri=https://creative-coding-final.vercel.app/"
           id="authenticate"
           >Authorize Spotify</a
         >
@@ -29,6 +29,7 @@
       var authBtn = document.querySelector('A');
       closeBtn.addEventListener('click', () => {
         modal.add('closed');
+        modalOpen = false;
       });
     </script>
   </body>

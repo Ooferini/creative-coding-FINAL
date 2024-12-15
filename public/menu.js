@@ -1,5 +1,5 @@
 let festHover = false;
-let quizHover = true;
+let quizHover = false;
 
 function menu() {
   if (festHover || quizHover) {
@@ -11,7 +11,7 @@ function menu() {
   fill('#000000');
   textSize(60);
   textStyle(BOLD);
-  displayTextCenter("Jo's Spotify Things", height / 6 - 30);
+  displayTextCenter("Jo's Spotify Things", height / 6 - 30, 0, width);
   updateButtons();
 }
 
@@ -26,9 +26,9 @@ function updateButtons() {
 
   // text in buttons
   fill('#000000');
-  textSize(24);
-  text('festival', x, height / 3, height / 3, height / 3);
-  text('quiz', x2, height / 3, height / 3, height / 3);
+  textSize(32);
+  displayTextCenter('festival', height / 3 + height / 6, x, x + height / 3);
+  displayTextCenter('quiz', height / 3 + height / 6, x2, x2 + height / 3);
 
   // check hover over buttons
   let a = mouseX >= x && mouseX <= x + height / 3;
@@ -39,11 +39,11 @@ function updateButtons() {
 }
 
 function changeScene() {
-  print('change scene');
   if (festHover) {
     scene = 'fest';
   } else if (quizHover) {
     scene = 'quiz';
     startQuiz();
   }
+  sketch.style.cursor = 'auto';
 }

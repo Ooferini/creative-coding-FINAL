@@ -9,6 +9,7 @@ let scene;
 let font;
 let bar;
 let animations = [];
+let modalOpen = true;
 
 function preload() {
   font = loadFont('/mono.otf');
@@ -22,7 +23,6 @@ function setup() {
   setName();
   getTopArtists();
   getTopSongs();
-  print(songs);
   scene = 'menu';
   textFont(font);
   songsUp;
@@ -47,11 +47,13 @@ function draw() {
 }
 
 function mouseClicked() {
-  if (fest) {
-    addArtistToLineup();
-  }
-  if (menu) {
-    changeScene();
+  if (!modalOpen) {
+    if (scene === 'fest') {
+      addArtistToLineup();
+    }
+    if (scene === 'menu') {
+      changeScene();
+    }
   }
 }
 
@@ -101,8 +103,9 @@ function anims() {
 }
 
 // helper function to display text in the center of the page;
-function displayTextCenter(msg, y) {
+function displayTextCenter(msg, y, xmin, xmax) {
+  let localWidth = xmax - xmin;
   let tWidth = textWidth(msg);
-  let x = (width - tWidth) / 2;
+  let x = xmin + (localWidth - tWidth) / 2;
   text(msg, x, y);
 }

@@ -4,6 +4,7 @@ function quiz() {
 }
 
 function startQuiz() {
+  print('startquiz');
   bar = createInput('');
   bar.input(checkSong);
   bar.size(500);
@@ -40,7 +41,6 @@ function displaySongs() {
 function checkSong() {
   let inputVal = bar.value().toLowerCase();
   let index;
-  print(inputVal);
   if (songs.includes(inputVal) && !songsUp.includes(inputVal)) {
     bar.value('');
     index = songs.indexOf(inputVal);
@@ -83,7 +83,12 @@ function displayQuizHead() {
   fill('#000000');
   textSize(48);
   textStyle(BOLD);
-  displayTextCenter('Top Songs Quiz', height / 8);
+  displayTextCenter('Top Songs Quiz', height / 8, 0, width);
   textSize(32);
-  displayTextCenter('how well do you know your taste?', height / 8 + 48);
+  displayTextCenter(
+    'how well do you know your taste?',
+    height / 8 + 48,
+    0,
+    width
+  );
 }
