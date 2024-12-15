@@ -33,7 +33,7 @@
       function setToken() {
         var hash = window.location.hash.split('&');
         s.setAccessToken(hash[0].substring(14));
-        if (s != '') {
+        if (hash != '') {
           closeModal();
         }
       }
