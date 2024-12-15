@@ -26,7 +26,6 @@ function setup() {
   scene = 'menu';
   textFont(font);
   songsUp;
-  startQuiz();
 }
 
 function draw() {
@@ -48,7 +47,12 @@ function draw() {
 }
 
 function mouseClicked() {
-  addArtistToLineup();
+  if (fest) {
+    addArtistToLineup();
+  }
+  if (menu) {
+    changeScene();
+  }
 }
 
 // adds top artists to artists[] array
@@ -94,4 +98,11 @@ function anims() {
   for (i of animations) {
     i.display();
   }
+}
+
+// helper function to display text in the center of the page;
+function displayTextCenter(msg, y) {
+  let tWidth = textWidth(msg);
+  let x = (width - tWidth) / 2;
+  text(msg, x, y);
 }

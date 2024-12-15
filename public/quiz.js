@@ -87,9 +87,3 @@ function displayQuizHead() {
   textSize(32);
   displayTextCenter('how well do you know your taste?', height / 8 + 48);
 }
-
-function displayTextCenter(msg, y) {
-  let tWidth = textWidth(msg);
-  let x = (width - tWidth) / 2;
-  text(msg, x, y);
-}
