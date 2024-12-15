@@ -27,10 +27,21 @@
       var modal = document.querySelector('.modal').classList;
       var closeBtn = document.getElementById('close');
       var authBtn = document.querySelector('A');
-      closeBtn.addEventListener('click', () => {
+      closeBtn.addEventListener('click', closeModal);
+
+      // sets spotify access token
+      function setToken() {
+        var hash = window.location.hash.split('&');
+        s.setAccessToken(hash[0].substring(14));
+        if (s != '') {
+          closeModal();
+        }
+      }
+
+      function closeModal() {
         modal.add('closed');
         modalOpen = false;
-      });
+      }
     </script>
   </body>
 </html>

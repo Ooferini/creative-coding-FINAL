@@ -80,12 +80,6 @@ function getTopSongs() {
   });
 }
 
-// sets spotify access token
-function setToken() {
-  var hash = window.location.hash.split('&');
-  s.setAccessToken(hash[0].substring(14));
-}
-
 // gets user's display name from their spotify profile
 function setName() {
   s.getMe({}, function (err, data) {
