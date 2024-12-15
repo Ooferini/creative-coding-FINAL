@@ -8,6 +8,7 @@ var sketch;
 let scene;
 let font;
 let bar;
+let animations = [];
 
 function preload() {
   font = loadFont('/mono.otf');
@@ -22,15 +23,18 @@ function setup() {
   getTopArtists();
   getTopSongs();
   print(songs);
-  scene = 'fest';
+  scene = 'menu';
   textFont(font);
   songsUp;
-  //startQuiz();
+  startQuiz();
 }
 
 function draw() {
   background('#5EF38C');
   switch (scene) {
+    case 'menu':
+      menu();
+      break;
     case 'fest':
       fest();
       break;
@@ -40,6 +44,7 @@ function draw() {
     default:
       break;
   }
+  anims();
 }
 
 function mouseClicked() {
@@ -63,7 +68,7 @@ function getTopSongs() {
     if (err) print(err);
     else {
       for (let i of data.items) {
-        songs.push(i.name);
+        songs.push(i.name.toLowerCase());
       }
     }
   });
@@ -83,4 +88,10 @@ function setName() {
       userName = data.display_name;
     }
   });
+}
+
+function anims() {
+  for (i of animations) {
+    i.display();
+  }
 }

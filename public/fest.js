@@ -1,7 +1,6 @@
 function fest() {
   textSize(14);
   fill('#000000');
-
   checkArtistHover();
   renderArtists();
   renderLineup();
